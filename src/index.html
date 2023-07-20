@@ -22,6 +22,14 @@
     <div class="ninja-bg"></div>
 
     <div class="main-container">
+      <div class="ninja-icon">
+        <img src="https://img.freepik.com/premium-vector/print_516633-67.jpg" alt="">
+        <div class="hello">
+          <p class="say-hello">Hello Ninja!!!</p>
+          <p class="say-bye hide">Thank you Ninja, have a goood day!!</p>
+        </div>
+      </div>
+
       <header>
         <h1 id="title">Basic Ninja Form</h1>
         <p id="description">
@@ -45,18 +53,18 @@
           </div>
           <div class="dropdown-field">
             <fieldset>
-              <p>
+              <h4>
                 When you are in Ninja Form, what will you do if someone spots you?
-              </p>
+              </h4>
               <select id="dropdown">
                 <option class="option" value="">(select option)</option>
                 <option class="option" value="1">I'll close my eyes to hide from the truth</option>
                 <option class="option" value="2">I will throw a smoke grenade</option>
                 <option class="option" value="3">Heads will be rolling today!</option>
               </select>
-              <p>
+              <h4>
                 Are you going to tell someone you're a Ninja?
-              </p>
+              </h4>
               <label for="option-1">
                 <input type="radio" name="radio-options" id="option-1" class="check" value="option-1"> Maybe... If he/she is atractive.
               </label>
@@ -67,9 +75,9 @@
           </div>
           <div class="checkbox-field">
             <fieldset>
-              <p>
+              <h4>
                 In your opinion, what are the best Ninja weapon?
-              </p>
+              </h4>
               <div class="checkbox-set">
                 <div class="set-1 division">
                   <label for='checkbox-1'>
@@ -117,7 +125,7 @@
               <textarea name='comments' id='textarea' rows='5' placeholder='Feel free to add a hush message here, Sensei will read it...'></textarea>
             </label>
           </div>
-          <button id='submit' value='submit'>Submit</submit>
+          <button id='submit' value='submit'>Submit</button>
         </form>
       </main>
     </div>
@@ -125,5 +133,39 @@
     <footer>
 
     </footer>
+
+    <script>
+      const btn = document.querySelector('#submit');
+      const sayHello = document.querySelector('.say-hello');
+      const sayBye = document.querySelector('.say-bye');
+      const form = document.getElementById('survey-form');
+      const hello = document.querySelector('.hello');
+
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        console.log('you click submit');
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+        form.reset();
+
+        hello.style.display = 'block';
+        sayHello.classList.add('hide');
+        sayBye.classList.remove('hide');
+      });
+
+      window.addEventListener('click', e => {
+        console.log(e.target);
+        if(hello.style.display == 'block' && !e.target.matches('button')){
+          hello.style.display = '';
+          sayHello.classList.toggle('hide');
+        sayBye.classList.toggle('hide');
+        }
+      })
+
+      hello.style.display = 'block'
+      setTimeout(() => {
+      hello.style.display = '';
+      }, 3000);
+    </script>
 </body>
 </html>
