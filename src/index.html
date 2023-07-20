@@ -4,95 +4,126 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Reggae+One&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css">
 
   <title>Ninja Form</title>
 </head>
 <body>
+    
+    <div class="ninja-bg"></div>
+
+    <div class="main-container">
+      <header>
+        <h1 id="title">Basic Ninja Form</h1>
+        <p id="description">
+          Are you a certified Ninja? Fill out this form and Sensei will evaluate you
+        </p>
+      </header>
+      <main>
+        <form id="survey-form">
+          <div class="text-field">
+            <fieldset>
+              <label for="" id="name-label">Alias:
+                <input type="text" name="name" id="name" placeholder="Enter your Ninja name" required>
+              </label>
+              <label id="email-label">Email:
+                <input type="email" name="email" id="email" placeholder="Enter your Ninja address" required>
+              </label>
+              <label for="number" id="number-label">Age: (optional)
+                <input type="number" name="number" id="number" nim="18" max="99" placeholder="How many centuries have you lived?">
+              </label>
+            </fieldset>
+          </div>
+          <div class="dropdown-field">
+            <fieldset>
+              <p>
+                When you are in Ninja Form, what will you do if someone spots you?
+              </p>
+              <select id="dropdown">
+                <option class="option" value="">(select option)</option>
+                <option class="option" value="1">I'll close my eyes to hide from the truth</option>
+                <option class="option" value="2">I will throw a smoke grenade</option>
+                <option class="option" value="3">Heads will be rolling today!</option>
+              </select>
+              <p>
+                Are you going to tell someone you're a Ninja?
+              </p>
+              <label for="option-1">
+                <input type="radio" name="radio-options" id="option-1" class="check"> Maybe... If he/she is atractive.
+              </label>
+              <label for="option-2">
+                <input type="radio" name="radio-options" id="option-2" class="check"> Absolutely not
+              </label>
+            </fieldset>
+          </div>
+          <div class="checkbox-field">
+            <fieldset>
+              <p>
+                In your opinion, what are the best Ninja weapon?
+              </p>
+              <div class="checkbox-set">
+                <div class="set-1 division">
+                  <label for='checkbox-1'>
+                    <input class='check' type='checkbox' value='option-1' id='checkbox-1' />
+                    Shuriken
+                  </label>
+                  <label for='checkbox-2'>
+                    <input class='check' type='checkbox' value='option-2' id='checkbox-2' />
+                    Kunai
+                  </label>
+                  <label for='checkbox-3'>
+                    <input class='check' type='checkbox' value='option-3' id='checkbox-3' />
+                    Sword
+                  </label>
+                  <label for='checkbox-4'>
+                    <input class='check' type='checkbox' value='option-4' id='checkbox-4' />
+                    Kusarigama
+                  </label>
+                </div>
   
-  <h1 id="title">Basic Ninja Form</h1>
-  <p id="description">
-    Are you a certified Ninja? Fill out this form and Sensei will evaluate you 
-  </p>
+                <div class="set-2 division">
+                  <label for='checkbox-5'>
+                    <input class='check' type='checkbox' value='option-5' id='checkbox-5' />
+                    Nunchaku
+                  </label>
+                  <label for='checkbox-6'>
+                    <input class='check' type='checkbox' value='option-6' id='checkbox-6' />
+                    Katana
+                  </label>
+                  <label for='checkbox-7'>
+                    <input class='check' type='checkbox' value='option-7' id='checkbox-7' />
+                    Ninjato
+                  </label>
+                  <label for='checkbox-8'>
+                    <input class='check' type='checkbox' value='option-8' id='checkbox-8' />
+                    Kusari-fundo
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          
+          <div class="textarea">
+            <label for='textarea'>
+              <textarea name='comments' id='textarea' rows='5' placeholder='Feel free to add a hush message here, Sensei will read it...'></textarea>
+            </label>
+          </div>
+          <button id='submit' value='submit'>Submit</submit>
+        </form>
+      </main>
+    </div>
 
-  <form id="survey-form">
-    <fieldset>
-      <label for="" id="name-label">Alias: 
-        <input type="text" name="name" id="name" placeholder="Enter your Ninja name" required>
-      </label>
-      <label id="email-label">Email: 
-        <input type="email" name="email" id="email" placeholder="Enter your Ninja address" required>
-      </label>
-      <label for="number" id="number-label">Age: 
-        <input type="number" name="number" id="number" nim="18" max="99" placeholder="How many centuries have you lived?">
-      </label>
-    </fieldset>
+    <footer>
 
-    <fieldset>
-      <p>
-        When you are in Ninja Form, what will you do if someone spots you?
-      </p>
-      <select id="dropdown">
-        <option value="">(select option)</option>
-        <option value="1">I'll close my eyes to hide from the truth</option>
-        <option value="2">I will throw a smoke grenade</option>
-        <option value="3">Heads will be rolling today!</option>
-      </select>
-      <p>
-        Are you going to tell someone you're a Ninja?
-      </p>
-      <label for="option-1">
-        <input type="radio" name="radio-options" id="option-1" class="inline"> Maybe... If he/she is atractive.
-      </label>
-      <label for="option-2">
-        <input type="radio" name="radio-options" id="option-2" class="inline"> Absolutely not
-      </label>
-    </fieldset>
-
-    <fieldset>
-      <p>
-        In your opinion, what are the best Ninja weapon?
-      </p>
-      <label for='checkbox-1'>
-        <input class='inline' type='checkbox' value='option-1' id='checkbox-1' /> 
-        Shuriken
-      </label>
-      <label for='checkbox-2'>
-        <input class='inline' type='checkbox' value='option-2' id='checkbox-2' /> 
-        Kunai
-      </label>
-      <label for='checkbox-3'>
-        <input class='inline' type='checkbox' value='option-3' id='checkbox-3' /> 
-        Sword
-      </label>
-      <label for='checkbox-4'>
-        <input class='inline' type='checkbox' value='option-4' id='checkbox-4' /> 
-        Kusarigama
-      </label>
-      <label for='checkbox-5'>
-        <input class='inline' type='checkbox' value='option-5' id='checkbox-5' /> 
-        Nunchaku
-      </label>
-      <label for='checkbox-6'>
-        <input class='inline' type='checkbox' value='option-6' id='checkbox-6' /> 
-        Katana
-      </label>
-      <label for='checkbox-7'>
-        <input class='inline' type='checkbox' value='option-7' id='checkbox-7' /> 
-        Ninjato
-      </label>
-      <label for='checkbox-8'>
-        <input class='inline' type='checkbox' value='option-8' id='checkbox-8' /> 
-        Kusari-fundo
-      </label>
-
-      <label for='textarea'>
-        <textarea name='comments' id='textarea' rows='5' placeholder='Feel free to add a hush message here, Sensei will read it...'></textarea>
-      </label>
-    </fieldset>
-    <button id='submit' value='submit'>Submit</submit>
-
-  </form>
-
+    </footer>
 </body>
 </html>

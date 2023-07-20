@@ -1,101 +1,176 @@
+*,
+::before,
+::after{
+  box-sizing: border-box;
+}
+
+:root{
+  --primary-color: rgb(115,165,128);
+  --secondary-color: rgb(62,54,63);
+  --accent-color: rgb(209,174,93);
+
+}
+
 html{
   font-size: 62.5%;
 }
 
 body{
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-weight: 100;
   margin: 0;
   padding: 0;
-  background: #1b1b32;
-  color: #f5f6f7;
   font-family: Open-sans, Arial, Helvetic;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
-h1,
-p {
-  margin: 1em auto;
+.ninja-bg{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  background-image: url(https://i.pinimg.com/originals/50/6d/da/506ddaee4057bf09eef771c1bd54a404.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  filter: blur(10px);
+  /* filter: grayscale(); */
+}
+
+.main-container{
+  width: 90%;
+  max-width: 640px;
+  min-width: 480px;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+  background: rgba(115, 165, 128, .8);
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, .3);
+}
+
+/* HEADER ------------------------------------------------------------- */
+header h1{
+  font-family: 'Reggae one', Arial, Helvetica, sans-serif;
+  font-size: 4rem;
   text-align: center;
 }
 
-p {
-  font-size: 1.6rem;
+header p{
+  text-align: center;
+  position: relative;
 }
 
-form {
-  width: 60vw;
-  max-width: 500px;
-  min-width: 300px;
-  margin: 0 auto;
-  padding-bottom: 2em;
-}
-
-fieldset {
+/* TEXT-FIELD ---------------------------------------------------------- */
+fieldset{
   border: none;
-  padding: 2rem 0;
-  border-bottom: 3px solid #3b3b4f;
 }
 
-fieldset:last-of-type {
-  border-bottom: none;
-}
-
-label {
+.text-field input,
+.text-field label{
   display: block;
-  margin: 0.5rem 0;
-  font-size: 1.6rem;
-  font-weight: normal;
-  text-align: left;
-}
-
-input,
-textarea,
-select {
-  margin: 10px 0 0 0;
   width: 100%;
-  min-height: 2em;
-  padding-left: 1rem;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  transition: background .15s, color .15s;
 }
 
-input,
-textarea {
-  background-color: #0a0a23;
-  border: 1px solid #0a0a23;
-  color: #ffffff;
+.text-field input:hover{
+  background: var(--accent-color);
+  color: var(--secondary-color);
+}
+
+.option{
+  background: red;
+}
+
+.text-field #number:last-child{
+  margin-bottom: unset;
+}
+
+.text-field input,
+.dropdown-field select{
   border-radius: 5px;
+  padding: 5px 10px;
+  text-indent: 5px;
+  border: 1px solid #000;
+  outline: none;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, .2);
+  background: var(--secondary-color);
+  color: #fff;
+  font-size: 1.3rem;
 }
 
-.inline {
-  width: unset;
-  margin: 0 0.5em 0 0;
-  vertical-align: middle;
-}
-
-#name,
-#email,
-#number {
-  margin-bottom: 1rem;
-  padding: 1rem;
-}
-
-button {
-  display: block;
-  margin: .5rem auto;
+#dropdown {
   width: 50%;
-  padding: 1rem;
-  border: 1px solid #767676;
-  border-radius: 5px;
-  background: #0a0a23;
-  color: #fff;
-  transition: background .2s, border .2s;
 }
 
-button:hover {
-  background: #1b1b32;
-  border: 1px solid #fff;
+.dropdown-field label{
+  display: block;
+  text-indent: 50px;
 }
 
-select {
-  padding: 1rem;
-  background: #0a0a23;
+.dropdown-field label:first-of-type{
+  margin-bottom: 10px;
+}
+
+/* CHECKBOX-FIELD------------------------------------------------------------- */
+.checkbox-field .checkbox-set{
+  display: flex;
+  flex-direction: row;
+  justify-content: left
+}
+
+.checkbox-field .division{
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.check{
+  accent-color: var(--secondary-color);
+  transition: accent-color .15s;
+}
+
+.check:hover{
+  accent-color: var(--accent-color);
+}
+
+/* TEXTAREA --------------------------------------------------------------------- */
+.textarea{
+  padding: 10px 50px;
+}
+
+#textarea{
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  background: var(--secondary-color);
   color: #fff;
+  border-left: 10px solid var(--accent-color);
+  outline: none;
+}
+
+/* BUTTON ------------------------------------------------------------------------ */
+button{
+  display: block;
+  margin: 0 auto;
+  padding: 10px 30px;
+  border-radius: 10px;
+  outline: none;
+  border: 0;
+  background: var(--secondary-color);
+  color: #fff;
+  transition: all .15s ease-out;
+}
+
+button:hover{
+  background: var(--accent-color);
+  color: #000;
+  transform: scale(1.05);
 }
