@@ -13,6 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
 
+  <!-- css and script link should be remove before running build -->
   <link rel="stylesheet" href="styles.css">
 
   <title>Ninja Form</title>
@@ -134,38 +135,6 @@
 
     </footer>
 
-    <script>
-      const btn = document.querySelector('#submit');
-      const sayHello = document.querySelector('.say-hello');
-      const sayBye = document.querySelector('.say-bye');
-      const form = document.getElementById('survey-form');
-      const hello = document.querySelector('.hello');
-
-      btn.addEventListener('click', e => {
-        e.preventDefault();
-        console.log('you click submit');
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-        form.reset();
-
-        hello.style.display = 'block';
-        sayHello.classList.add('hide');
-        sayBye.classList.remove('hide');
-      });
-
-      window.addEventListener('click', e => {
-        console.log(e.target);
-        if(hello.style.display == 'block' && !e.target.matches('button')){
-          hello.style.display = '';
-          sayHello.classList.toggle('hide');
-        sayBye.classList.toggle('hide');
-        }
-      })
-
-      hello.style.display = 'block'
-      setTimeout(() => {
-      hello.style.display = '';
-      }, 3000);
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>
