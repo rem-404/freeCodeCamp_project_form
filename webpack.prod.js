@@ -1,9 +1,10 @@
 const path = require("path");
 const common = require("./webpack.common");
-const { merge } = require("webpack-merge");
+const {merge} = require("webpack-merge");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = merge(common, {
   mode: "production",
@@ -19,13 +20,33 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        test: /\.css$/i,
+        test: /\.s?css$/,
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"]
+          }
+        }
+      }
     ],
   },
   optimization: {
-    minimizer: [new TerserPlugin()]
-    // minimizer: [new CssMinimizerPlugin()]
-  }
+    minimizer: [
+      new CssMinimizerPlugin(),
+      new TerserPlugin(),
+      new HtmlWebpackPlugin({
+        template: "./src/index.html",
+        minify: {
+          removeAttributeQuotes: true,
+          collapseWhitespace: true,
+          removeComments: true
+        },
+      }),
+    ],
+  },
 });
